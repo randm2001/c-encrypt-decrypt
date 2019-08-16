@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+CMakeFiles/*
+CMakeCache.txt
+MakeFile
+cmake_install.cmake
+encrypt-decrypt
