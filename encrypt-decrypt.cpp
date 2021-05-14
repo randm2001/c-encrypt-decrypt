@@ -1,8 +1,9 @@
 #include <string>
 #include <string.h>
-#include <printf.h>
-#include "aes.hpp"
+#include <stdio.h>
+#include "aes.h"
 #include "base64.h"
+#include <iostream>
 
 int main()
 {
@@ -28,10 +29,10 @@ int main()
     AES_CTR_xcrypt_buffer(&ctx, encodedCharArr, strlen((char*)encodedCharArr));
     printf("\nDecrypted: %s", (char*)encodedCharArr);
     
-    std::string decoded;
-    decoded.resize(Base64decode_len((char*)encodedCharArr));
-    size_t actualSize = Base64decode(&decoded[0], (char*)encodedCharArr);
-    decoded.resize(actualSize);
-    printf("\nDecoded: %s", &decoded[0]);
+     std::string decoded;
+     decoded.resize(Base64decode_len((char*)encodedCharArr));
+     size_t actualSize = Base64decode(&decoded[0], (char*)encodedCharArr);
+     decoded.resize(actualSize);
+     printf("\nDecoded: %s", &decoded[0]);
     return 0;
 }
